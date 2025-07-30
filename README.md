@@ -12,3 +12,12 @@
 * Arduino IDE
 * WiFiNINA (Arduino library)
 * ArduinoJson (Arduino library)
+
+## How to run
+
+First, host the web files (volunteer.html and backend.js). The best way to do this is probably to use a web hosting service, but I ended up using a temporary measure. Here is what I did:
+* I installed ngrok.
+* I ran the command "node backend.js" in the console (after cd'ing to the director where the web files were).
+* I opened volunteer.html in my browser.
+* I used this command in ngrok: ngrok http --scheme=http http://localhost:3000
+  * Note: has to be http and not https because the microcontroller only works with http
