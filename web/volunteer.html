@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale-1.0">
+    <title>Volunteer App Simulation</title>
+</head>
+<body>
+    <h1>Real-time message:</h1>
+    <p id="message" style="white-space: pre-line;">Waiting for updates...</p>
+    <h1>Your reply:</h1>
+    <button onClick="sendMessage('yes')">Yes</button>
+    <button onClick="sendMessage('no')">No</button>
+</body>
+<script>
+    // Create WebSocket connection.
+    const socket = new WebSocket("ws://localhost:3000");
+    let update_received = false;
+
+    // Connection opened
+    socket.addEventListener("open", (event) => {
+        // socket.send("Hello Server!");
+        console.log("Connected to server.");
+    });
+
+    // Listen for messages
+    socket.addEventListener("message", (event) => {
+        console.log("Message from server ", event.data);
+        document.getElementById("message").textContent = event.data;
+        update_received = true;
+    });
+
+    const sendMessage = (message) => {
+        if (update_received) {
+            socket.send(message);
+            document.getElementById("message").textContent = `You have said ${message} to this person's request.`;
+            update_received = false;
+        }
+    }
+</script>
