@@ -31,5 +31,6 @@ After flashing the microcontroller, it will take several seconds before it conne
 * The buttons in the top row from left-to-right are cooking and shopping.
 * The buttons in the middle row from left-to-right are morning and afternoon.
 * The button in the bottom row is the submit button.
+
 After making a request and submitting, go to the webpage that uses volunteer.html. You will be able to see the request you sent, and now have the option to accept or decline it. If you accept, the multi-colored LED will turn green for three seconds and then turn purple; in order to use the device again, you must replug it. (Ideally, there would be a "cancel request" button one could press to regain control of the device, but I ran out of GPIO pins.) If you decline, the multi-colored LED will turn red for three seconds and then the board will be usable again (i.e. you can make another request). Ideally, there would be other LEDs to indicacte success or failure and the multi-colored LED should just be restricted to indicating which volunteer agreed, but I had limited GPIO pins.
 When you are finished, unplug the device.
