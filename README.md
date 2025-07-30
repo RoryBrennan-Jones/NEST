@@ -1,2 +1,14 @@
 # NEST
-Contains files from my HCI research as part of the Summer 2025 “US-German Research on Human-Automation Interaction for the Future of Work” IRES program
+
+## Requirements
+
+### Web
+* Node.js
+* Express.js (npm module)
+* WebSocket (npm module)
+
+### Arduino
+* Arduino Uno WiFi Rev2 (microcontroller board)
+* Arduino IDE
+* WiFiNINA (Arduino library)
+* ArduinoJson (Arduino library)
